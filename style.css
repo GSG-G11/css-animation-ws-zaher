@@ -1,0 +1,40 @@
+body {
+	min-height: 100vh;
+	overflow: hidden;
+	display: grid;
+	place-items: center;
+}
+
+.hero {
+	width: 350px;
+	height: 350px;
+	background-image: url("./img/image.jpg");
+	background-position: center;
+	background-size: cover;
+	animation: move 2.5s ease, borderRadiusAnim 1.5s 2.5s forwards;
+}
+
+@keyframes move {
+	0% {
+		transform: translate(600px, 100px);
+		opacity: 0;
+	}
+	60% {
+		opacity: 0.5;
+		transform: scale(1.4) translate(-350px, 0px);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1) translate(0, 0);
+	}
+}
+
+@keyframes borderRadiusAnim {
+	to {
+		transform: scale(1.2);
+		--size: 350px;
+		width: var(--size);
+		height: var(--size);
+		border-radius: 50%;
+	}
+}
